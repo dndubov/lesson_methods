@@ -63,14 +63,16 @@ public class Main {
         System.out.println(CYAN + "Задача 2: Установите " + version + " приложения для " + os + " по ссылке" + RESET);
     }
 
-    // Рассчёт дней доставки
     public static int calculateDeliveryDays(int distance) {
-        if (distance > 100) {
-            return -1; // Доставка невозможна
+        if (distance <= 20) {
+            return 1;
         }
-        int days = 1; // Базовые сутки
-        if (distance > 20) days++;
-        if (distance > 60) days++;
-        return days;
+        if (distance <= 60) {
+            return 2;
+        }
+        if (distance <= 100) {
+            return 3;
+        }
+        return -1; // Если доставка невозможна
     }
 }
